@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="./styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS partea 2</title>
@@ -26,63 +27,509 @@
       <!-- Formatarea textului -->
       <secti>
         <h2 id="formatarea">Formatarea textului</h2>
+        <p>
+          Textul este conținutul principal al paginilor web, iar pentru
+          formatare acestuia există o varietate de proprietăți CSS care sunt
+          folosite zilnic.
+        </p>
+
+        <!-- Proprieteti formatare text -->
         <ul>
           <!-- Proprietatea text-decoration -->
           <li>
             <h3>Proprietatea text-decoration</h3>
-            <p></p>
+            <p>Aceasta setează diverse sublinieri și alte efecte de text.</p>
+            <p>text-decoration: none | underline | line-through | overline</p>
+            <p>
+              Foaia de stil a browserului setează majoritatea elementelor la
+              none, adică dezactivate. Dar, de exemplu, link-urile sunt setate
+              în mod implicit cu underline.
+            </p>
+            <h4>Exemplu :</h4>
+
+            <!-- Text html exemplu -->
+            <section>
+              <h1 class="title">Iste odit similique sit</h1>
+              <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi,
+                <span>veritatis nihil alias iste</span> odit similique sit eius
+                optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.
+              </p>
+              <a href="" class="link">Citeşte mai mult...</a>
+            </section>
+            <h4>HTML</h4>
+            <p>
+              &lt;h1 class="title"a&gt;Iste odit similique sit&lt;/h1a&gt;<br />
+              &lt;p class="text"a&gt;<br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />
+              Obcaecati commodi,<br />
+              &lt;spana&gt;veritatis nihil alias iste&lt;/spana&gt; odit
+              similique sit eius
+              <br />
+              optio veniam, impedit cumque fuga facere labore quo id <br />
+              necessitatibus quaerat rerum. <br />
+              &lt;/pa&gt;<br />
+              &lt;a href="" class="link"a&gt;Citeşte mai mult...&lt;/a&gt;
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .text > span { <br />
+              text-decoration: line-through;<br />
+              } <br />
+              <br />
+              .link { <br />
+              text-decoration: none;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea text-transform -->
           <li>
             <h3>Proprietatea text-transform</h3>
-            <p></p>
+            <p>
+              Aceasta controlează caracterele din text, cum ar fi scrierea
+              tuturor literelor cu majuscule sau cu minuscule. În marcaj, textul
+              este întotdeauna tastat conform regulilor limbii literare. După
+              aceea, cu ajutorul text-transform, se aduce la formatul necesar,
+              deoarece toată formatarea trebuie să fie în CSS.
+            </p>
+            <p>text-transform: none | uppercase | lowercase | capitalize</p>
+            <p>
+              Haideți să creăm marcajul unui meniu de navigare, în care textul
+              elementelor va fi scris cu majuscule.
+            </p>
+
+            <!-- Text html exemplu -->
+            <ul class="site-nav">
+              <li><a href="" class="link">Blog</a></li>
+              <li><a href="" class="link">Workshops</a></li>
+              <li><a href="" class="link">Podcasts</a></li>
+              <li><a href="" class="link">About</a></li>
+            </ul>
+
+            <h4>HTML</h4>
+            <p>
+              &lt;ul class="site-nav"&gt; <br />
+              &lt;li&gt;&lt;a href="" class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+              <br />
+              &lt;li&gt;&lt;a href=""
+              class="link"&gt;Workshops&lt;/a&gt;&lt;/li&gt; <br />
+              &lt;li&gt;&lt;a href=""
+              class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+              &lt;li&gt;&lt;a href="" class="link"&gt;About&lt;/a&gt;&lt;/li&gt;
+              <br />
+              &lt;/ul&gt;
+            </p>
+            <p>
+              Acum, în stiluri, transformați toate literele textului link-ului
+              în majuscule.
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .site-nav .link { <br />
+              text-transform: uppercase;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea text-align -->
           <li>
             <h3>Proprietatea text-align</h3>
-            <p></p>
+            <p>
+              Aceasta controlează alinierea orizontală a conținutului textului
+              unui element.
+            </p>
+            <p>text-align: left | right | center | justify</p>
+            <p>
+              În mod implicit, textul este aliniat în partea stângă (valoarea
+              left).
+            </p>
+
+            <!-- Text html exemplu -->
+            <article class="post">
+              <h1 class="post-title">Lorem ipsum dolor sit amet</h1>
+              <p class="post-text align-right">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.
+              </p>
+
+              <p class="post-text align-justify">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.
+              </p>
+            </article>
+
+            <h4>HTML</h4>
+            <p>
+              &lt;article class="post"> <br />
+              &lt;h1 class="post-title"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+              <br />
+              &lt;p class="post-text align-right"&gt; <br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi,<br />
+              veritatis nihil alias iste odit similique sit eius optio veniam,
+              impedit <br />
+              cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              <br />
+              &lt;/p&gt; <br />
+
+              &lt;p class="post-text align-justify"&gt; <br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi,<br />
+              veritatis nihil alias iste odit similique sit eius optio veniam,
+              impedit <br />
+              cumque fuga facere labore quo id necessitatibus quaerat rerum.
+              <br />
+              &lt;/p&gt;<br />
+              &lt;article&gt;
+            </p>
+            <p>
+              Centrăm textul titlului și aliniem uniform textul paragrafelor la
+              dreapta.
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .post-title { <br />
+              text-align: center;<br />
+              } <br />
+              <br />
+              .align-right { <br />
+              text-align: right;<br />
+              } <br />
+              <br />
+              .align-justify { <br />
+              text-align: justify;<br />
+              }
+            </p>
+            <p>Atentie...!!!</p>
+            <p>
+              Folosirea valorii justify nu este cea mai bună idee. Deși textul
+              este presat uniform pe marginile din stânga și din dreapta ale
+              blocului, lizibilitatea acestuia scade semnificativ. Totul se
+              datorează faptului că spațiile dintre cuvinte capătă lățimi
+              diferite, iar acest lucru afectează negativ percepția asupra
+              textului.
+            </p>
           </li>
 
           <!-- Proprietatea text-indent -->
           <li>
             <h3>Proprietatea text-indent</h3>
-            <p></p>
+            <p>
+              Aceasta setează indentarea primei linii a unui bloc de text, cum
+              ar fi un paragraf. Nu afectează toate celelalte linii, cu excepția
+              primei.
+            </p>
+            <p>text-indent: valoare | procente | inherit</p>
+            <p>
+              Drept valori, sunt acceptate orice unități de lungime, cum ar fi
+              pixeli (px). Atunci când valoarea este setată ca procente,
+              indentarea se calculează pe baza lățimii blocului.
+            </p>
+
+            <!-- Text html exemplu -->
+            <article class="post">
+              <h1 class="post-title">Lorem ipsum dolor sit amet</h1>
+              <p class="post-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.Obcaecati commodi, veritatis nihil
+                alias iste odit similique sit eius optio veniam, impedit cumque
+                fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+            </article>
+
+            <h4>HTML</h4>
+            <p>
+              &lt;article class="post"&gt; <br />
+              &lt;h1 class="post-title"&gt;Lorem ipsum dolor sit amet&lt;/h1&gt;
+              <br />
+              &lt;p class="post-text"&gt; <br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi,<br />
+              veritatis nihil alias iste odit similique sit eius optio veniam,
+              impedit <br />
+              cumque fuga facere labore quo id necessitatibus quaerat
+              rerum.Obcaecati <br />
+              commodi, veritatis nihil alias iste odit similique sit eius optio
+              veniam,<br />
+              impedit cumque fuga facere labore quo id necessitatibus quaerat
+              rerum. <br />
+              &lt;/p&gt; <br />
+              &lt;/article&gt; <br />
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .post-text { <br />
+              text-indent: 100px;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea line-height -->
           <li>
             <h3>Proprietatea line-height</h3>
-            <p></p>
+            <p>
+              Aceasta setează distanța între linii (leading, line-height) a
+              textului. În mod implicit, distanța dintre linii depinde de tipul
+              de font și de dimensiunile acestuia și e stabilită automat de
+              browser.
+            </p>
+            <p>
+              line-height: multiplicator | valoare | procente | normal | inherit
+            </p>
+            <p>
+              Valoarea poate fi specificată în unități absolute sau relative și
+              ca multiplicator. Cel mai bine este să setați valoarea ca
+              multiplicator, astfel încât leading-ul să fie calculat din
+              dimensiunea actuală a fontului textului.
+            </p>
+
+            <h4>Exemplu :</h4>
+
+            <!-- Text html exemplu -->
+            <p class="text-one">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi, veritatis nihil alias iste odit similique sit
+              eius optio veniam, impedit cumque fuga facere labore quo id
+              necessitatibus quaerat rerum.Obcaecati commodi, veritatis nihil
+              alias iste odit similique sit eius optio veniam, impedit cumque
+              fuga facere labore quo id necessitatibus quaerat rerum.
+            </p>
+
+            <h4>HTML</h4>
+            <p>
+              &lt;p class="text-one"&gt;<br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi,<br />
+              veritatis nihil alias iste odit similique sit eius optio veniam,
+              impedit <br />
+              cumque fuga facere labore quo id necessitatibus quaerat
+              rerum.Obcaecati <br />
+              commodi, veritatis nihil alias iste odit similique sit eius optio
+              veniam,<br />
+              impedit cumque fuga facere labore quo id necessitatibus quaerat
+              rerum. <br />
+              &lt;/p&gt;
+            </p>
+            <p>
+              De exemplu, dacă layoutul are o dimensiune a fontului de 16px și
+              un leading de 24px, pur și simplu împărțiți 24 la 16 și obțineți
+              un multiplicator de 1,5. Folosirea unui multiplicator ajută la
+              scalarea uniformă a spațierii dintre linii, pe măsură ce
+              dimensiunea textului se modifică.
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .text-one { <br />
+              font-size: 16px;<br />
+              line-height: 1.5;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea letter-spacing -->
           <li>
             <h3>Proprietatea letter-spacing</h3>
-            <p></p>
+            <p>
+              Această proprietate indică distanța dintre caractere. În mod
+              implicit, distanța dintre caractere este setată în funcție de
+              tipul fontului, dimensiunea acestuia și setările sistemului de
+              operare.
+            </p>
+            <p>letter-spacing: valoare | normal | inherit</p>
+            <p>
+              Uneori, designerii stabilesc o valoare non-standard pentru
+              distanța dintre caractere, motiv pentru care există proprietatea
+              letter-spacing.
+            </p>
+            <h4>Exemplu :</h4>
+
+            <!-- Text html exemplu -->
+            <article class="post-one">
+              <h1 class="post-title-one">Lorem ipsum dolor sit amet</h1>
+              <p class="post-text-one">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.Obcaecati commodi, veritatis nihil
+                alias iste odit similique sit eius optio veniam, impedit cumque
+                fuga facere labore quo id necessitatibus quaerat rerum.
+              </p>
+            </article>
+
+            <h4>HTML</h4>
+            <p>
+              &lt;article class="post-one"&gt; <br />
+              &lt;h1 class="post-title-one"&gt;Lorem ipsum dolor sit
+              amet&lt;/h1&gt; <br />
+              &lt;p class="post-text-one"&gt; <br />
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati commodi,<br />
+              veritatis nihil alias iste odit similique sit eius optio veniam,
+              impedit <br />
+              cumque fuga facere labore quo id necessitatibus quaerat
+              rerum.Obcaecati <br />
+              commodi, veritatis nihil alias iste odit similique sit eius optio
+              veniam,<br />
+              impedit cumque fuga facere labore quo id necessitatibus quaerat
+              rerum. <br />
+              &lt;/p&gt; <br />
+              &lt;/&article&gt; <br />
+            </p>
+
+            <p>
+              Pentru claritate, vom atribui valori mari proprietății
+              letter-spacing pentru titlul și textul paragrafului.
+            </p>
+
+            <h4>CSS</h4>
+            <p>
+              .post-title-one { <br />
+              letter-spacing: 10px;<br />
+              } <br />
+              <br />
+              .post-text-one { <br />
+              letter-spacing: 5px;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea word-spacing -->
           <li>
             <h3>Proprietatea word-spacing</h3>
-            <p></p>
+            <p>
+              Arată distanța dintre cuvinte. În mod implicit, spațierea dintre
+              cuvinte este setată în funcție de tipul fontului, dimensiunea
+              acestuia și setările sistemului de operare.
+            </p>
+            <p>word-spacing: valoare | normal | inherit</p>
+            <p>Interesant...!!!</p>
+            <p>
+              Proprietatea word-spacing aparține unui grup de proprietăți de
+              formatare a textului care se folosește destul de rar.
+            </p>
           </li>
 
           <!-- Proprietatea text-shadow -->
           <li>
             <h3>Proprietatea text-shadow</h3>
-            <p></p>
+            <p>
+              Aceasta controlează umbra textului și, de asemenea, setează
+              parametrii acestuia: culoare, offset (deplasare) și raza de
+              estompare.
+            </p>
+            <p>
+              text-shadow: (offset x), (offset y), (rază de estompare),
+              (culoare)(/culoare)
+            </p>
 
+            <!-- Descriere proprietati de mai sus -->
+            <ul>
+              <li>
+                culoarea – specificată în orice format. În mod implicit,
+                culoarea umbrei este aceeași cu culoarea textului.
+              </li>
+              <li>
+                offset x – deplasarea umbrei pe orizontală în raport cu textul.
+                O valoare pozitivă setează offset-ul umbrei la dreapta, o
+                valoare negativă – la stânga.
+              </li>
+              <li>
+                offset y – deplasarea umbrei pe verticală în raport cu textul. O
+                valoare pozitivă stabilește offset-ul umbrei în jos, o valoare
+                negativă – în sus.
+              </li>
+              <li>
+                raza de estompare – cu cât valoarea este mai mare, cu atât umbra
+                este mai estompată și devine mai deschisă. În mod implicit, dacă
+                nu este specificată, este 0.
+              </li>
+            </ul>
+
+            <!-- Exemplu -->
+            <section>
+              <h5>Exemplu :</h5>
+              <h1 class="title-two">Fusce posuere ligula elementum purus</h1>
+              <p>
+                Haideți să facem un text alb cu o umbră întunecată. Pentru asta,
+                setăm offset-ul de-a lungul axelor X și Y la 2px, raza de
+                estompare la 4px și culoarea neagră a umbrei.
+              </p>
+              <h6>HTML</h6>
+              <p>
+                &lt;h1 class="title-two"&gt;Fusce posuere ligula elementum
+                purus&lt;/h1&gt;
+              </p>
+
+              <h6>CSS</h6>
+              <p>
+                .title-two { <br />
+                color: #ffffff;<br />
+                text-shadow: 2px 2px 4px #000000;<br />
+                }
+              </p>
+            </section>
             <!-- Umbra cu mai multe straturi -->
-            <h4>Umbra cu mai multe straturi</h4>
-            <p></p>
+            <section>
+              <h4>Umbra cu mai multe straturi</h4>
+              <p>
+                Unui element îi puteți adăuga mai mult de o umbră, separându-le
+                cu o virgulă. Ca rezultat, obținem un tort cu mai multe straturi
+                de umbre.
+              </p>
+
+              <!-- Exemplu -->
+              <section>
+                <h5>Exemplu :</h5>
+                <h1 class="title-up">Fusce posuere ligula elementum purus</h1>
+
+                <h6>HTML</h6>
+                <p>
+                  &lt;h1 class="title-up"&gt;Fusce posuere ligula elementum
+                  purus&lt;/h1&gt;
+                </p>
+                <p>
+                  Ordinea de afișare este următoarea – prima umbră din listă
+                  este plasată în partea de sus, ultima – în partea de jos.
+                  Adică, cu cât umbra este specificată mai devreme, cu atât este
+                  mai sus în straturi și se va suprapune vizual pe toate umbrele
+                  ulterioare.
+                </p>
+
+                <h6>CSS</h6>
+                <p>
+                  .title-up { <br />
+                  color: #ffffff;<br />
+                  text-shadow: 2px 2px 20px #ff0000, 5px 5px 5px #000000;<br />
+                  }
+                </p>
+              </section>
+            </section>
           </li>
 
           <!-- Proprietatea white-space -->
           <li>
             <h3>Proprietatea white-space</h3>
-            <p></p>
+            <p>
+              În mod implicit, browserul ignoră mai mult de un spațiu și o
+              întrerupere de linie în marcajul HTML. Proprietatea white-space,
+              la fel ca tag-ul (pre), dar mai flexibilă, controlează formatarea
+              spațiilor și a pauzelor de text.
+            </p>
+            <p>white-space: normal | nowrap | pre | pre-wrap</p>
           </li>
         </ul>
       </secti>
@@ -94,25 +541,196 @@
           <!-- Proprietatea font-size -->
           <li>
             <h3>Proprietatea font-size</h3>
-            <p></p>
+            <p>
+              Setează dimensiunea fontului elementului în unități absolute sau
+              relative. Deocamdată, ne vom limita la unități absolute – px
+              (pixeli).
+            </p>
+
+            <!-- Exemplu -->
+            <section>
+              <h4>Exemplu</h4>
+              <p class="text-font">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                necessitatibus quaerat rerum.
+              </p>
+              <p>
+                În mod implicit dimensiunea fontului paragrafelor, care este
+                setată în foaia de stil a browserului, este 16px.
+              </p>
+
+              <h5>HTML</h5>
+              <p>
+                &lt;p class="text-font"&gt; Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Obcaecati commodi, veritatis nihil
+                alias iste odit similique sit eius optio veniam, impedit cumque
+                fuga facere labore quo id necessitatibus quaerat rerum.
+                lt;/p&gt;
+              </p>
+
+              <h5>CSS</h5>
+              <p>
+                .text-font { <br />
+                font-size: 20px;<br />
+                }
+              </p>
+            </section>
           </li>
 
           <!-- Proprietatea font-weight -->
           <li>
             <h3>Proprietatea font-weight</h3>
-            <p></p>
+            <p>
+              Acest tip de proprietate controlează grosimea conturului
+              (îngroșare, pondere) literelor fontului. Valoarea proprietății
+              poate fi specificată ca un set de cuvinte sau numere cuprinse
+              între 100 și 900 în trepte de 100 care setează gradul de grosime a
+              glifului de la subțire cu 100, la gros cu 900.
+            </p>
+            <p>
+              font-weight: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+            </p>
+            pCuvintele cheie sunt legate de numere, de exemplu, normal este 400
+            și bold este 700. Developerii folsoesc doar numerele, datorită
+            capacității de a seta exact aceeași pondere în toate browserele.
+
+            <!-- Exemplu -->
+            <section>
+              <h4>Exemplu</h4>
+              <section>
+                <h1 class="title-weight">Iste odit similique sit</h1>
+                <p class="text-weight">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati commodi, veritatis nihil alias iste odit similique
+                  sit eius optio veniam, impedit cumque fuga facere labore quo
+                  id necessitatibus quaerat rerum.
+                </p>
+              </section>
+
+              <h5>HTML</h5>
+              <p>
+                &lt;h1 class="title-weight"&gt;Iste odit similique
+                sit&lt;/h1&gt;
+                <br />
+                &lt;p class="text-weight"&gt; <br />
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />
+                Obcaecati commodi, veritatis nihil alias iste odit similique sit
+                <br />
+                eius optio veniam, impedit cumque fuga facere labore quo id
+                <br />
+                necessitatibus quaerat rerum. <br />
+                &lt;/p&gt;
+              </p>
+              <p>
+                În mod implicit, ponderea fontului paragrafelor, care este
+                setată în foaia de stil a browserului, este 400, iar ponderea
+                antetelor este 700.
+              </p>
+
+              <h5>CSS</h5>
+              <p>
+                /* Să schimbăm așezarea ponderii textului titlului și al
+                paragrafului */ <br />
+                .title-weight { <br />
+                font-weight: 400;<br />
+                } <br />
+                <br />
+                .text-weight { <br />
+                font-weight: 700;<br />
+                }
+              </p>
+            </section>
           </li>
 
           <!-- Proprietatea font-style -->
           <li>
             <h3>Proprietatea font-style</h3>
-            <p></p>
+            <p>
+              Aceasta setează stilul textului, de exemplu, puteți face textul
+              cursiv.
+            </p>
+            <p>font-style: normal | italic | oblique | initial | inherit</p>
+            <p>Dintre toate valorile, sunt folosite doar două.</p>
+            <ul>
+              <li>normal – valoare implicită pentru majoritatea tag-urilor</li>
+              <li>italic – text cursiv (înclinat)</li>
+            </ul>
+
+            <!-- Exemplu -->
+            <section>
+              <h4>Exemplu</h4>
+              <section>
+                <h1 сlass="title-style">Iste odit similique sit</h1>
+                <p class="text-style">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Obcaecati commodi, veritatis nihil alias iste odit similique
+                  sit eius optio veniam, impedit cumque fuga facere labore quo
+                  id necessitatibus quaerat rerum.
+                </p>
+              </section>
+              <p>Haideți să facem textul titlului cursiv.</p>
+
+              <h5>HTML</h5>
+              <p>
+                &lt;h1 сlass="title-style"&gt;Iste odit similique
+                sit&lt;/h1&gt;<br />
+                &lt;p class="text-style"&gt;<br />
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />
+                Obcaecati commodi, veritatis nihil alias iste odit similique
+                <br />
+                sit eius optio veniam, impedit cumque fuga facere labore quo
+                <br />
+                id necessitatibus quaerat rerum. <br />
+                &lt;/p&gt;
+              </p>
+
+              <h5>CSS</h5>
+              <p>
+                .title-style { <br />
+                font-style: italic;<br />
+                }
+              </p>
+            </section>
           </li>
 
           <!-- Proprietatea font-family -->
           <li>
             <h3>Proprietatea font-family</h3>
-            <p></p>
+            <p>
+              Un font – un set de litere tipografice, cifre și caractere
+              speciale cu un anumit stil de tastare.
+            </p>
+            <p>
+              Fonturile sunt împărțite în mai multe grupuri de bază (familii):
+              fonturi serif, fonturi sans-serif, monospace, decorative și scrise
+              de mână. MacOS, Linux și Windows conțin un set de fonturi standard
+              din fiecare familie. În mod implicit, dacă nu este specificat
+              niciun alt font, browserul folosește Times New Roman din familia
+              serif.
+            </p>
+            <p>
+              Utilizați instrumentele de dezvoltare din fila Computed pentru a
+              vedea cu ce font este afișat textul unui anumit element.
+            </p>
+            <p>
+              Proprietatea font-family indică fontul textului unui element.
+              Puteți enumera un număr de fonturi, ales aleatoriu, separate prin
+              virgule. Apoi, în ordine de la stânga la dreapta, browserul va
+              încerca să le găsească în sistemul utilizatorului, și îl va aplica
+              pe primul găsit.
+            </p>
+            <p>
+              body { font-family: 'Helvetica Neue', 'Roboto', 'Verdana',
+              'Tahoma', sans-serif; }
+            </p>
+            <p>
+              La sfârșitul listei, este întotdeauna specificată o familie de
+              fonturi, pentru cazul în care niciunul dintre fonturile enumerate
+              nu poate fi găsit. După care, se va aplica fontul standard din
+              această familie, care se află în sistemul utilizatorului.
+            </p>
           </li>
         </ul>
       </secti>
@@ -124,13 +742,174 @@
           <!-- Pseudo-elementul ::first-letter -->
           <li>
             <h3>Pseudo-elementul ::first-letter</h3>
-            <p></p>
+            <p>
+              Controlează stilul primului caracter din textul elementului la
+              care este adăugat. Acestui pseudo-element îi puteți aplica doar
+              proprietăți de formatare a fontului, culorilor, fundalului și a
+              geometriei elementului.
+            </p>
+            <p>
+              element::first-letter { <br />
+              }
+            </p>
+
+            <!-- Exemplu -->
+            <section>
+              <h4>Exemplu</h4>
+              <p>
+                De exemplu, puteți evidenția primele litere ale fiecărui
+                paragraf dintr-o poezie.
+              </p>
+
+              <!-- Poezie cu (pre) -->
+              <section>
+                <pre>
+  Când amintirile-n trecut
+  Încearcă să mă cheme,
+  Pe drumul lung şi cunoscut
+  Mai trec din vreme-n vreme.
+</pre
+                >
+
+                <pre>
+  Deasupra casei tale ies
+  Şi azi aceleaşi stele,
+  Ce-au luminat atât de des
+  Înduioşării mele.
+</pre
+                >
+
+                <pre>
+  Şi peste arbori răsfiraţi
+  Răsare blânda lună,
+  Ce ne găsea îmbrăţişaţi
+  Şoptindu-ne-mpreună.
+</pre
+                >
+              </section>
+
+              <h5>HTML</h5>
+              <p>
+                &lt;pre&gt;<br />
+                Când amintirile-n trecut <br />
+                Încearcă să mă cheme,<br />
+                Pe drumul lung şi cunoscut <br />
+                Mai trec din vreme-n vreme. <br />
+                &lt;/pre&gt;<br />
+                <br />
+                &lt;pre&gt;<br />
+                Deasupra casei tale ies <br />
+                Şi azi aceleaşi stele,<br />
+                Ce-au luminat atât de des <br />
+                Înduioşării mele. <br />
+                &lt;/pre&gt;<br />
+                <br />
+                &lt;pre&gt;<br />
+                Şi peste arbori răsfiraţi <br />
+                Răsare blânda lună,<br />
+                Ce ne găsea îmbrăţişaţi <br />
+                Şoptindu-ne-mpreună. <br />
+                &lt;/pre&gt;
+              </p>
+
+              <p>
+                Haideți să stilizăm pseudo-elementul ::first-letter al tag-ului
+                pre. Vom schimba fontul, dimensiunea și culoarea acestuia.
+              </p>
+
+              <h5>CSS</h5>
+              <p>
+                pre { <br />
+                font-family: 'Arial', 'Helvetica', sans-serif; <br />
+                color: #2a2a2a; <br />
+                font-size: 16px; <br />
+                } <br />
+                <br />
+                pre::first-letter { <br />
+                font-family: 'Tahoma', serif;<br />
+                font-size: 32px;<br />
+                color: #f44336;<br />
+                }
+              </p>
+            </section>
           </li>
 
           <!-- Pseudo-elementul ::selection -->
           <li>
             <h3>Pseudo-elementul ::selection</h3>
-            <p></p>
+            <p>
+              Determină stilul de selecție a textului unui element, redefinind
+              valorile implicite din foaia de stil a browserului. La formatare
+              pot fi folosite numai proprietățile color și background-color.
+              Selectați o parte a textului exemplu cu mouse-ul.
+            </p>
+
+            <!-- Exemplu -->
+            <section>
+              <h4>Exemplu</h4>
+
+              <!-- Poezie cu (pre) -->
+              <section class="selection">
+                <pre>
+  Wyatt resteth here, that quick could never rest;
+  Whose heavenly gifts increased by disdain,
+  And virtue sank the deeper in his breast;
+  Such profit he by envy could obtain.
+</pre
+                >
+
+                <pre>
+  A head where wisdom mysteries did frame,
+  Whose hammers beat still in that lively brain
+  As on a stithy where that some work of fame
+  Was daily wrought, to turn to Britain's gain.
+</pre
+                >
+              </section>
+
+              <h3>HTML</h3>
+              <p>
+                &lt;section class="selection"&gt; <br />
+                &lt;pre&gt;<br />
+                Wyatt resteth here, that quick could never rest;<br />
+                Whose heavenly gifts increased by disdain,<br />
+                And virtue sank the deeper in his breast;<br />
+                Such profit he by envy could obtain. <br />
+                &lt;/pre <br />
+                &gt;<br />
+                <br />
+                &lt;pre&gt;<br />
+                A head where wisdom mysteries did frame,<br />
+                Whose hammers beat still in that lively brain <br />
+                As on a stithy where that some work of fame <br />
+                Was daily wrought, to turn to Britain's gain. <br />
+                &lt;/pre <br />
+                &gt; <br />
+                &lt;/section&gt;
+              </p>
+
+              <h3>CSS</h3>
+              <p>
+                .selection>pre { <br />
+                font-family: 'Arial', 'Helvetica', sans-serif;<br />
+                color: #2a2a2a;<br />
+                font-size: 16px;<br />
+                } <br />
+                <br />
+                .selection>pre::first-letter { <br />
+                font-family: 'Tahoma', serif;<br />
+                font-size: 32px;<br />
+                color: #f44336;<br />
+                } <br />
+                <br />
+                /* Let's add text selection styles for each paragraph of the
+                poem. */ <br />
+                .selection>pre::selection { <br />
+                color: #ffffff;<br />
+                background-color: #3f51b5;<br />
+                }
+              </p>
+            </section>
           </li>
         </ul>
       </secti>
@@ -138,17 +917,152 @@
       <!-- Fonturi personalizate -->
       <secti>
         <h2 id="fonturi">Fonturi personalizate</h2>
+        <p>
+          Fontul ajută la crearea unui site atractiv și de neuitat. Milioane de
+          site-uri cu același font, "Times New Roman", ar fi probabil prea
+          plictisitoare. De aceea, designerii își creează propriile fonturi, iar
+          developerii le pot folosi în proiecte.
+        </p>
+        <p>Interesant...!!!</p>
+        <p>
+          Fonturile se împart în două categorii: plătite și gratuite. Pentru un
+          font plătit trebuie să achiziționați o licență, în caz contrar
+          folosirea acestuia fără licență reprezintă o încălcare a drepturilor
+          de autor. Există o mulțime de fonturi frumoase gratuite, care sunt în
+          domeniul public.
+        </p>
         <ul>
           <!-- Serviciul Google Fonts -->
           <li>
             <h3>Serviciul Google Fonts</h3>
-            <p></p>
+            <p>
+              Google Fonts este depozitul unui număr enorm de fonturi gratuite.
+              Tot ce trebuie să faceți este să găsiți fontul care vă place, să
+              obțineți un link către acesta și să îl includeți în fișierul HTML,
+              drept altă foaie de stil.
+            </p>
+            <p>
+              Copiați și inserați următorul cod HTML în fișierul de marcare și
+              deschideți pagina într-un browser. Textul redat într-un font
+              personalizat nu se distinge prin altceva decât aspectul, așa că
+              puteți folosi orice proprietăți CSS pentru a-l stiliza.
+            </p>
+            <a href="./google.html">Making the Web Beautiful!</a>
+            <p>
+              Pentru a obține un font gratuit personalizat de pe Google Fonts,
+              accesați link-ul și veți ajunge pe pagina de căutare.
+            </p>
+            <p>
+              Puteți să parcurgeți galeria de fonturi și să-l căutați pe cel pe
+              care-l preferați, sau dacă cunoașteți numele fontului,
+              introduceți-l în câmpul de căutare și dați click pe numele
+              acestuia.
+            </p>
+            <p>
+              Pe pagina fontului, selectați ponderea dorită. Nu este nevoie să
+              selectați toate ponderile disponibile. Cu cât alegeți mai multe
+              opțiuni, cu atât fișierul cu fonturi va fi mai aglomerat și prin
+              urmare și pagina web se va încărca mai greu. La fel și-n cazul
+              numărului de fonturi. De obicei, încercați să vă limitați doar la
+              folosirea unuia, maximum două fonturi pentru întregul site.
+            </p>
+            <p>Atentie...!!!</p>
+            <p>
+              Nu toate fonturile cuprind întregul interval de ponderi (de la 100
+              la 900) și de tipuri (standard sau cursiv). Designerul creează un
+              set cu cele mai populare valori. Dacă un font nu suportă o anumită
+              pondere, browserul îl va reda cu cea mai apropiată pondere
+              disponibilă.
+            </p>
+            <p>
+              Avem nevoie doar de ponderea 700 deoarece folosim fontul pentru
+              titluri.
+            </p>
+            <p>
+              În fila Incorporare, copiați tag-ul <link />, care conține un link
+              către foaia de stil de font și adăugați-o la antetul documentului
+              HTML, înainte de restul stilurilor.
+            </p>
+            <p>
+              Acum puteți utiliza fontul Tangerine în foaia de stil,
+              specificându-l în proprietatea font-family.
+            </p>
           </li>
 
           <!-- Directiva @font-face -->
           <li>
             <h3>Directiva @font-face</h3>
-            <p></p>
+            <p>
+              Să vedem ce am inclus în documentul HTML în secțiunea anterioară.
+            </p>
+            <ol>
+              <li>
+                Deschideți instrumentele de dezvoltare și accesați secțiunea
+                "Network".
+              </li>
+              <li>
+                Selectați filtrul "CSS" astfel încât să fie afișate doar
+                fișierele de stil.
+              </li>
+              <li>Dați click pe fișierul din Google Fonts.</li>
+              <li>
+                Dați click pe “Preview”, care afișează conținutul fișierului.
+              </li>
+            </ol>
+            <p>
+              /* latin */ <br />
+              @font-face { <br />
+              font-family: 'Tangerine';<br />
+              font-style: normal;<br />
+              font-weight: 700;<br />
+              font-display: swap;<br />
+              src: local('Tangerine Bold'), local('Tangerine-Bold'),<br />
+              url(https://fonts.gstatic.com/s/tangerine/v12/Iurd6Y5j_oScZZow4VO5srNZi5FNym499g.woff2)
+              <br />
+              format('woff2');<br />
+              unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
+              U+02C6, U+02DA,<br />
+              U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+              U+2212, U+2215,<br />
+              U+FEFF, U+FFFD;<br />
+              }
+            </p>
+            <p>
+              Așadar, Google Fonts ne-a pus la dispoziție cel mai obișnuit
+              fișier CSS care conține directiva @font-face - declararea
+              fontului. Această directivă vă permite să specificați parametrii
+              fontului inclus.
+            </p>
+            <ul>
+              <li>
+                font-family – nume local pentru utilizare în codul nostru CSS.
+              </li>
+              <li>font-style – un tip de font (normal, cursiv etc).</li>
+              <li>font-weight – ponderea fontului inclus.</li>
+              <li>
+                font-display – controlează afișarea textului în timpul
+                încărcării fontului.
+              </li>
+              <li>
+                src – o referință la fișierul fontului în sine și o specificație
+                a tipului acestuia, de obicei woff sau woff2. În cazul nostru,
+                fișierul cu fonturi se află pe serverele Google, dar poate fi și
+                un font local care este stocat în fișierele proiectului.
+              </li>
+              <li>
+                unicode-range – specifică setul de caractere necesare în fontul
+                din tabelul de caractere Unicode. Încărcarea tuturor
+                caracterelor nu este necesară, cu cât sunt mai puține, cu atât
+                fontul se va încărca mai rapid.
+              </li>
+            </ul>
+            <p>Util...!!!</p>
+            <p>
+              Cele mai cunoscute caractere (limbi, simboluri matematice etc.)
+              sunt colectate și descrise într-un standard numit Unicode, în care
+              fiecare caracter are un nume (de exemplu, "litera majusculă latină
+              a") și un cod (punct de cod) – o cifră de la 0 la 10FFFF.
+            </p>
           </li>
         </ul>
       </secti>

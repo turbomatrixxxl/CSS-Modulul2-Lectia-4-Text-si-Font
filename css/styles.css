@@ -1,0 +1,97 @@
+.text > span {
+  text-decoration: line-through;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.site-nav .link {
+  text-transform: uppercase;
+}
+
+.post-title {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.post-text {
+  text-indent: 100px;
+}
+
+.text-one {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.post-title-one {
+  letter-spacing: 10px;
+}
+
+.post-text-one {
+  letter-spacing: 5px;
+}
+
+.title-two {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.title-up {
+  color: #ffffff;
+  text-shadow: 2px 2px 20px #ff0000, 5px 5px 5px #000000;
+}
+
+.text-font {
+  font-size: 20px;
+}
+
+/*  Să schimbăm așezarea ponderii textului titlului și al paragrafului */
+.title-weight {
+  font-weight: 400;
+}
+
+.text-weight {
+  font-weight: 700;
+}
+
+.title-style {
+  font-style: italic;
+}
+
+pre {
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: #2a2a2a;
+  font-size: 16px;
+}
+
+pre::first-letter {
+  font-family: "Tahoma", serif;
+  font-size: 32px;
+  color: #f44336;
+}
+
+.selection > pre {
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: #2a2a2a;
+  font-size: 16px;
+}
+
+.selection > pre::first-letter {
+  font-family: "Tahoma", serif;
+  font-size: 32px;
+  color: #f44336;
+}
+
+/* Let's add text selection styles for each paragraph of the poem. */
+.selection > pre::selection {
+  color: #ffffff;
+  background-color: #3f51b5;
+}
